@@ -43,6 +43,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Quote as a text obj
     Plug 'kana/vim-textobj-user'
     Plug 'beloglazov/vim-textobj-quotes'
-
+    " Fern
+    Plug 'lambdalisue/fern.vim'
+    Plug 'ryanoasis/vim-devicons'
+    Plug 'lambdalisue/fern-renderer-devicons.vim'
 
 call plug#end()
