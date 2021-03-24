@@ -55,5 +55,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'kdheepak/lazygit.nvim', { 'branch': 'nvim-v0.4.3' }
     " Easy-align
     Plug 'junegunn/vim-easy-align'
+    Plug 'machakann/vim-highlightedyank'
 
 call plug#end()
