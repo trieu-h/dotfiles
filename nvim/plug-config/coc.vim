@@ -179,6 +179,7 @@ let g:coc_explorer_global_presets = {
 \ }
 
 let g:coc_global_extensions = [
+      \'coc-angular',
       \'coc-json',
       \'coc-reason',
       \'coc-snippets',

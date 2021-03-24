@@ -47,5 +47,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'lambdalisue/fern.vim'
     Plug 'ryanoasis/vim-devicons'
     Plug 'lambdalisue/fern-renderer-devicons.vim'
+    " Easy split/join
+    Plug 'AndrewRadev/splitjoin.vim'
+    " Lazygit integration
+    Plug 'kdheepak/lazygit.nvim', { 'branch': 'nvim-v0.4.3' }
 
 call plug#end()
