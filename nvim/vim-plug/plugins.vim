@@ -49,9 +49,11 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'lambdalisue/fern-renderer-devicons.vim'
     " Easy split/join
     Plug 'AndrewRadev/splitjoin.vim'
-    " Lazygit integration
     "Highlight color
     Plug 'norcalli/nvim-colorizer.lua'
+    " Lazygit integration
     Plug 'kdheepak/lazygit.nvim', { 'branch': 'nvim-v0.4.3' }
+    " Easy-align
+    Plug 'junegunn/vim-easy-align'
 
 call plug#end()
