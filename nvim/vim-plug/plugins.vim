@@ -50,6 +50,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Easy split/join
     Plug 'AndrewRadev/splitjoin.vim'
     " Lazygit integration
+    "Highlight color
+    Plug 'norcalli/nvim-colorizer.lua'
     Plug 'kdheepak/lazygit.nvim', { 'branch': 'nvim-v0.4.3' }
 
 call plug#end()
