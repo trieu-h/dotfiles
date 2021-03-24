@@ -49,5 +49,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'lambdalisue/fern-renderer-devicons.vim'
     "Highlight color
     Plug 'norcalli/nvim-colorizer.lua'
+    Plug 'kdheepak/lazygit.nvim', { 'branch': 'nvim-v0.4.3' }
 
 call plug#end()
