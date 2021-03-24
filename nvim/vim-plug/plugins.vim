@@ -47,5 +47,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'lambdalisue/fern.vim'
     Plug 'ryanoasis/vim-devicons'
     Plug 'lambdalisue/fern-renderer-devicons.vim'
+    "Highlight color
+    Plug 'norcalli/nvim-colorizer.lua'
 
 call plug#end()
