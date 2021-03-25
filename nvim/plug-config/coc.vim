@@ -188,6 +188,6 @@ let g:coc_global_extensions = [
       \'coc-vimlsp'
       \]
 
-nmap <Leader>e :CocCommand explorer<CR>
-nnoremap <Leader>er :call CocAction('runCommand', 'explorer.doAction', 'closest', ['reveal:0'], [['relative', 0, 'file']])<CR>
+nmap <silent> <Leader>e :CocCommand explorer<CR>
+nnoremap <silent> <Leader>re :call CocAction('runCommand', 'explorer.doAction', 'closest', ['reveal:0'], [['relative', 0, 'file']])<CR>
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
