@@ -44,9 +44,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'kana/vim-textobj-user'
     Plug 'beloglazov/vim-textobj-quotes'
     " Fern
-    Plug 'lambdalisue/fern.vim'
-    Plug 'ryanoasis/vim-devicons'
-    Plug 'lambdalisue/fern-renderer-devicons.vim'
+    " Plug 'lambdalisue/fern.vim'
+    " Plug 'ryanoasis/vim-devicons'
+    " Plug 'lambdalisue/fern-renderer-devicons.vim'
     " Easy split/join
     Plug 'AndrewRadev/splitjoin.vim'
     "Highlight color
