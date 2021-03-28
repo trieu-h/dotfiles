@@ -189,6 +189,7 @@ let g:coc_global_extensions = [
       \]
 
 nmap <silent> <Leader>e :CocCommand explorer<CR>
+nmap <space>f :CocCommand explorer --preset floating<CR>
 nnoremap <silent> <Leader>re :call CocAction('runCommand', 'explorer.doAction', 'closest', ['reveal:0'], [['relative', 0, 'file']])<CR>
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
 
