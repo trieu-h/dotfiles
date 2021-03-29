@@ -52,5 +52,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Easy-align
     Plug 'junegunn/vim-easy-align'
     Plug 'machakann/vim-highlightedyank'
+    " Makes scrolling smoother
+    Plug 'psliwka/vim-smoothie'
 
 call plug#end()

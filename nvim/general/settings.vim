@@ -36,6 +36,8 @@ set clipboard=unnamedplus               " Copy paste between vim and everything 
 :set number relativenumber              " Turn hybrid line numbers on
 :set nu rnu
 "set autochdir                           " Your working directory will always be the same as your working directory
+set textwidth=80
+set colorcolumn=+1                      " Reminder to enter new line at 80 characters
 
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
 
