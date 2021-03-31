@@ -12,8 +12,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'sheerun/vim-polyglot'
     " Auto pairs for '(' '[' '{'
     Plug 'jiangmiao/auto-pairs'
-    " One Dark Theme
+    " Theme related
     Plug 'joshdick/onedark.vim'
+    Plug 'colepeters/spacemacs-theme.vim'
     " Stable version of coc
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " Airline

@@ -3,10 +3,10 @@ inoremap <expr> <c-j> ("\<silent><C-n>")
 inoremap <expr> <c-k> ("\<C-p>")
 
 " Use alt + hjkl to resize windows
-nnoremap 7    :resize +2<CR>
-nnoremap 9    :vertical resize +2<CR>
-nnoremap 0    :vertical resize -2<CR>
-nnoremap 8    :resize -2<CR>
+nnoremap <Leader>7    :resize +2<CR>
+nnoremap <Leader>0    :vertical resize -2<CR>
+nnoremap <Leader>9    :vertical resize +2<CR>
+nnoremap <Leader>8    :resize -2<CR>
 
 " I hate escape more than anything else
 inoremap jj <Esc>
