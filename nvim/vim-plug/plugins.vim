@@ -24,6 +24,11 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
     " Vim Surround
     Plug 'tpope/vim-surround'
+    " Git integration
+    Plug 'tpope/vim-fugitive'
+    Plug 'stsewd/fzf-checkout.vim'
+    " Extra spicy repeat
+    Plug 'tpope/vim-repeat'
     " FZF
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
@@ -52,8 +57,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'kdheepak/lazygit.nvim', { 'branch': 'nvim-v0.4.3' }
     " Easy-align
     Plug 'junegunn/vim-easy-align'
+    " Remainder to replace this with built-in function later
     Plug 'machakann/vim-highlightedyank'
-    " Makes scrolling smoother
-    Plug 'psliwka/vim-smoothie'
+    " Fancy start screen
+    Plug 'mhinz/vim-startify'
 
 call plug#end()

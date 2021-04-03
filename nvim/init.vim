@@ -10,4 +10,5 @@ source $HOME/.config/nvim/plug-config/fzf.vim
 source $HOME/.config/nvim/plug-config/whitespace.vim
 source $HOME/.config/nvim/plug-config/easy-align.vim
 source $HOME/.config/nvim/plug-config/highlight-yank.vim
+source $HOME/.config/nvim/plug-config/startify.vim
 lua require'plug-colorizer'
