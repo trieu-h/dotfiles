@@ -3,6 +3,3 @@ if (has("termguicolors"))
 endif
 set background=dark
 colorscheme spacemacs-theme
-
-:hi NonText guifg=bg
-

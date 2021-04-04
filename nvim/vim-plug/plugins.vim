@@ -13,8 +13,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Auto pairs for '(' '[' '{'
     Plug 'jiangmiao/auto-pairs'
     " Theme related
-    Plug 'joshdick/onedark.vim'
     Plug 'colepeters/spacemacs-theme.vim'
+    Plug 'matsuuu/pinkmare'
+    Plug 'morhetz/gruvbox'
     " Stable version of coc
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " Airline
