@@ -1,5 +1,3 @@
-if (has("termguicolors"))
-  set termguicolors
-endif
+set termguicolors
 set background=dark
 colorscheme spacemacs-theme
