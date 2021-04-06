@@ -9,7 +9,6 @@ ibus/
 gtk-4.0/
 pulse/
 nvim/autoload
-
 gnome-initial-setup-done
 nautilus/search-metadata
 nvim/.netrwhist
@@ -18,9 +17,4 @@ totem/state.ini
 user-dirs.dirs
 user-dirs.locale
 karabiner/automatic_backups/karabiner_20210327.json
-karabiner/karabiner.json
-karabiner/karabiner.json
-karabiner/karabiner.json
-karabiner/karabiner.json
-karabiner/karabiner.json
 karabiner/karabiner.json
