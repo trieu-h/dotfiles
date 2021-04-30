@@ -40,6 +40,8 @@ set scrolloff=8                         " Prevent cutoff at end of line
 set textwidth=120
 set colorcolumn=+1                      " Reminder to enter new line at 80 characters
 set inccommand=nosplit                  " Live substitution
+set formatoptions-=cro                  " Stop newline continuation of comments
+let loaded_netrwPlugin = 1              " Don't load netrw
 
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
 
