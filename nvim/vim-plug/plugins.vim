@@ -8,29 +8,36 @@ endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
 
-    " Better Syntax Support
-    Plug 'sheerun/vim-polyglot'
+    """"Lua Plugins""""
+
+    Plug 'kyazdani42/nvim-web-devicons' " for file icons
+    Plug 'kyazdani42/nvim-tree.lua'
+
+    " Highlight other use of words under cursor
+    Plug 'RRethy/vim-illuminate'
+
+    " Theme
+    Plug 'tiagovla/tokyodark.nvim'
+
+    " Status line
+    " Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
+    Plug 'hoob3rt/lualine.nvim'
+
+
+    """"VimL Plugins""""
+
     " Auto pairs for '(' '[' '{'
     Plug 'jiangmiao/auto-pairs'
     " Theme related
     Plug 'colepeters/spacemacs-theme.vim'
     Plug 'matsuuu/pinkmare'
     Plug 'junegunn/seoul256.vim'
-    " Stable version of coc
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    " Airline
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
-    " Vim Surround
     Plug 'tpope/vim-surround'
     " Git integration
     Plug 'tpope/vim-fugitive'
     Plug 'stsewd/fzf-checkout.vim'
     " Extra spicy repeat
     Plug 'tpope/vim-repeat'
-    " FZF
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-    Plug 'junegunn/fzf.vim'
     " Vim DevIcons
     Plug 'ryanoasis/vim-devicons'
     " Indent object
@@ -51,12 +58,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'AndrewRadev/splitjoin.vim'
     "Highlight color
     Plug 'norcalli/nvim-colorizer.lua'
-    " Lazygit integration
-    Plug 'kdheepak/lazygit.nvim', { 'branch': 'nvim-v0.4.3' }
     " Easy-align
     Plug 'junegunn/vim-easy-align'
     " Remainder to replace this with built-in function later
     Plug 'machakann/vim-highlightedyank'
-    " Fancy start screen
-    Plug 'mhinz/vim-startify'
 call plug#end()
