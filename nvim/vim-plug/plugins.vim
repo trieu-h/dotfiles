@@ -27,7 +27,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Lsp related
     Plug 'neovim/nvim-lspconfig'
+    Plug 'hrsh7th/nvim-compe'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+    Plug 'sbdchd/neoformat'
+    Plug 'onsails/lspkind-nvim'
 
     " Telescope
     Plug 'nvim-lua/popup.nvim'
@@ -35,10 +38,11 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'nvim-telescope/telescope.nvim'
     Plug 'nvim-telescope/telescope-media-files.nvim'
 
+    " Autopair (, [, ...
+    Plug 'windwp/nvim-autopairs'
+
     """"VimL Plugins""""
 
-    " Auto pairs for '(' '[' '{'
-    Plug 'jiangmiao/auto-pairs'
     " Theme related
     Plug 'colepeters/spacemacs-theme.vim'
     Plug 'matsuuu/pinkmare'
