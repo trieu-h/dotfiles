@@ -63,8 +63,8 @@ gls.left[2] = {
       local alias = {n = 'NORMAL',i = 'INSERT',c= 'COMMAND',V= 'VISUAL', [''] = 'VISUAL'}
       return alias[vim.fn.mode()]
     end,
-    separator = '',
-    separator_highlight = {colors.pink, 
+    separator = '  ',
+    separator_highlight = {colors.pink,
       (function() if buffer_not_empty() then return colors.darkblue else return colors.bg end end)(),
     },
     highlight = {colors.darkblue,colors.pink,'bold'},
@@ -82,7 +82,7 @@ gls.left[4] = {
   FileName = {
     provider = {'FileName', 'FileSize'},
     condition = buffer_not_empty,
-    separator = '',
+    separator = '  ',
     separator_highlight = {colors.purple,colors.darkblue},
     highlight = {colors.magenta,colors.darkblue}
   }
@@ -111,9 +111,8 @@ gls.left[6] = {
   DiagnosticError = {
     provider = 'DiagnosticError',
     condition = buffer_not_empty,
-    --icon = '  ',
     icon = ' ❌ ',
-    separator = '',
+    separator = '  ',
     separator_highlight = {colors.purple,colors.darkblue},
     highlight = {colors.red,colors.darkblue}
   }
@@ -122,7 +121,6 @@ gls.left[6] = {
 gls.left[8] = {
   DiagnosticWarn = {
     provider = 'DiagnosticWarn',
-    --icon = '  ',
     icon = '⚠️' ,
     condition = buffer_not_empty,
     highlight = {colors.blue,colors.darkblue},
@@ -152,21 +150,10 @@ local checkwidth = function()
   end
   return false
 end
---[[
-gls.left[11] = {
-  LeftEnd = {
-    provider = function() return '' end,
-    --separator = '',
-    --separator_highlight = {colors.purple,colors.bg},
-    highlight = {colors.bg,colors.bg}
-  }
-}
-]]
----------------------------------------------------------------------------------------------------
+
 gls.right[1] = {
   DiffAdd = {
     provider = 'DiffAdd',
-    --icon = ' ',
     condition = vcs.check_git_workspace,
     icon = '🟢',
     highlight = {colors.green,colors.purple},
@@ -176,7 +163,6 @@ gls.right[2] = {
   DiffModified = {
     provider = 'DiffModified',
     condition = vcs.check_git_workspace,
-    --icon = ' ',
     icon = '🟡',
     highlight = {colors.orange,colors.purple},
   }
@@ -185,24 +171,21 @@ gls.right[3] = {
   DiffRemove = {
     provider = 'DiffRemove',
     condition = vcs.check_git_workspace,
-    --icon = ' ',
     icon = '🔴',
     highlight = {colors.red,colors.purple},
   }
 }
 gls.right[4] ={
   Separator = {
-    provider = function() return '' end,
-    --separator = '',
+    provider = function() return ' ' end,
     condition = function() return has_diff() and buffer_not_empty() end,
     highlight = { colors.purple, colors.bg},
-    --separator_highlight =  {colors.purple,colors.bg},
   }
 }
 gls.right[5]= {
   FileFormat = {
     provider = 'LineColumn',
-    separator = '',
+    separator = ' ',
     separator_highlight = {colors.bg,colors.purple},
     highlight = {colors.grey,colors.purple},
   }
@@ -218,7 +201,7 @@ gls.right[6] = {
 gls.right[7] = {
   PerCent = {
     provider = 'LinePercent',
-    separator = '',
+    separator = ' ' ,
     separator_highlight = {colors.darkblue,colors.purple},
     highlight = {colors.grey,colors.darkblue},
   }
@@ -229,24 +212,3 @@ gls.right[8] = {
     highlight = {colors.yellow,colors.purple},
   }
 }
-
----------------------------------------------------------------------------------------------
---gls.short_line_left[1] = {
-  --BufferType = {
-    --provider = 'FileTypeName',
---    separator = '',
-  --  separator_highlight = {colors.purple,colors.bg},
-    --highlight = {colors.grey,colors.purple}
---  }
---}
-
---[[
-gls.short_line_right[1] = {
-  BufferIcon = {
-    provider= 'BufferIcon',
-    separator = '',
-    separator_highlight = {colors.purple,colors.bg},
-    highlight = {colors.grey,colors.purple}
-  }
-}
-]]
