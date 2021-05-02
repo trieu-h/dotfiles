@@ -25,6 +25,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Highlight color
     Plug 'norcalli/nvim-colorizer.lua'
 
+    " Lsp related
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+
     """"VimL Plugins""""
 
     " Auto pairs for '(' '[' '{'
