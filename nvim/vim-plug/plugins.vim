@@ -38,6 +38,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Autopair (, [, ...
     Plug 'windwp/nvim-autopairs'
 
+    " Peek a line in advance
+    Plug 'nacro90/numb.nvim'
+
     """"VimL Plugins""""
 
     " Theme related
