@@ -39,6 +39,12 @@ set colorcolumn=+1                      " Reminder to enter new line at 80 chara
 set inccommand=nosplit                  " Live substitution
 let loaded_netrwPlugin = 1              " Don't load netrw
 
+augroup highlight_yank
+  autocmd!
+  au TextYankPost * silent! lua vim.highlight.on_yank { higroup='IncSearch', timeout=500 }
+augroup END
+
+
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
 
 " You can't stop me

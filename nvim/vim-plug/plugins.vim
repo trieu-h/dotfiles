@@ -13,9 +13,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'kyazdani42/nvim-web-devicons' " for file icons
     Plug 'kyazdani42/nvim-tree.lua'
 
-    " Highlight other use of words under cursor
-    Plug 'RRethy/vim-illuminate'
-
     " Theme
     Plug 'tiagovla/tokyodark.nvim'
 
@@ -73,6 +70,4 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'AndrewRadev/splitjoin.vim'
     " Easy-align
     Plug 'junegunn/vim-easy-align'
-    " Remainder to replace this with built-in function later
-    Plug 'machakann/vim-highlightedyank'
 call plug#end()
