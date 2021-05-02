@@ -20,9 +20,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tiagovla/tokyodark.nvim'
 
     " Status line
-    " Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
-    Plug 'hoob3rt/lualine.nvim'
+    Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 
+    " Highlight color
+    Plug 'norcalli/nvim-colorizer.lua'
 
     """"VimL Plugins""""
 
@@ -56,8 +57,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'beloglazov/vim-textobj-quotes'
     " Easy split/join
     Plug 'AndrewRadev/splitjoin.vim'
-    "Highlight color
-    Plug 'norcalli/nvim-colorizer.lua'
     " Easy-align
     Plug 'junegunn/vim-easy-align'
     " Remainder to replace this with built-in function later
