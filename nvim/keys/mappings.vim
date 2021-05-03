@@ -3,10 +3,11 @@ inoremap <expr> <c-j> ("\<silent><C-n>")
 inoremap <expr> <c-k> ("\<C-p>")
 
 " Use alt + 7890 to resize windows
-nnoremap <Leader>7    :resize +2<CR>
-nnoremap <Leader>0    :vertical resize -2<CR>
-nnoremap <Leader>9    :vertical resize +2<CR>
-nnoremap <Leader>8    :resize -2<CR>
+" TODO find a better mapping for this
+" nnoremap <Leader>7    :resize +2<CR>
+" nnoremap <Leader>0    :vertical resize -2<CR>
+" nnoremap <Leader>9    :vertical resize +2<CR>
+" nnoremap <Leader>8    :resize -2<CR>
 
 " I hate escape more than anything else
 inoremap jj <Esc>
@@ -34,22 +35,32 @@ nmap <S-CR> O<Esc>
 nmap <CR> o<Esc>
 
 " Disable highlight after searching
-nmap <Esc><Esc> :nohl<CR>
+nmap <F2> :nohl<CR>
 
-" Zoom / Restore window.
-function! s:ZoomToggle() abort
-    if exists('t:zoomed') && t:zoomed
-        execute t:zoom_winrestcmd
-        let t:zoomed = 0
+" Quick fix remap (s/o theprimeagen)
+let g:the_primeagen_qf_l = 0
+let g:the_primeagen_qf_g = 0
+
+fun! ToggleQFList(global)
+    if a:global
+        if g:the_primeagen_qf_g == 1
+            let g:the_primeagen_qf_g = 0
+            cclose
+        else
+            let g:the_primeagen_qf_g = 1
+            copen
+        end
     else
-        let t:zoom_winrestcmd = winrestcmd()
-        resize
-        vertical resize
-        let t:zoomed = 1
+        if g:the_primeagen_qf_l == 1
+            let g:the_primeagen_qf_l = 0
+            lclose
+        else
+            let g:the_primeagen_qf_l = 1
+            lopen
+        end
     endif
-endfunction
-command! ZoomToggle call s:ZoomToggle()
-nnoremap <silent> <C-w>z :ZoomToggle<CR>
+endfun
 
-" Correct indentation when pasting
-nnoremap p p=`]
+nnoremap <leader>q :call ToggleQFList(1)<CR>
+nnoremap <leader>k :cnext<CR>zz
+nnoremap <leader>j :cprev<CR>zz

@@ -33,7 +33,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
-    Plug 'nvim-telescope/telescope-media-files.nvim'
+    Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
     " Autopair (, [, ...
     Plug 'windwp/nvim-autopairs'
@@ -73,4 +73,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'AndrewRadev/splitjoin.vim'
     " Easy-align
     Plug 'junegunn/vim-easy-align'
+    " Zoom on split
+    Plug 'szw/vim-maximizer'
 call plug#end()
