@@ -89,7 +89,9 @@ vim.api.nvim_set_keymap("n", "<Leader>fg", [[<Cmd>lua require('telescope.builtin
 vim.api.nvim_set_keymap("n", "<Leader>fG", [[<Cmd>lua require('telescope.builtin').grep_string()<CR>]], opt)
 vim.api.nvim_set_keymap("n", "<Leader>gc", [[<Cmd>lua require('nvim.plugins.telescope').git_branches()<CR>]], opt)
 vim.api.nvim_set_keymap("n", "<Leader>vrc", [[<Cmd>lua require('nvim.plugins.telescope').search_dotfiles()<CR>]], opt)
-vim.api.nvim_set_keymap("n", "<Leader>fm", [[<Cmd> Neoformat<CR>]], opt)
+-- Formattting, TODO: check the diffrence between this and lsp but fomatting function
+-- vim.api.nvim_set_keymap("n", "<Leader>fm", [[<Cmd> Neoformat<CR>]], opt)
+-- vim.api.nvim_set_keymap("v", "<Leader>fm", [[<Cmd> Neoformat<CR>]], opt)
 
 -- highlights
 

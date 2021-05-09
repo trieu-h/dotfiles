@@ -6,6 +6,7 @@ require('nvim.plugins.treesitter')
 require('nvim.plugins.telescope')
 require('nvim.plugins.compe')
 require('nvim.plugins.filetree')
+require('nvim.plugins.diffview')
 require('nvim-autopairs').setup()
 require("lspkind").init()
 require('numb').setup{

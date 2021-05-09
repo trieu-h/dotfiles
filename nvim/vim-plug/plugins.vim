@@ -41,6 +41,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Peek a line in advance
     Plug 'nacro90/numb.nvim'
 
+    " Git stuff
+    Plug 'sindrets/diffview.nvim'
+
     """"VimL Plugins""""
 
     " Theme related

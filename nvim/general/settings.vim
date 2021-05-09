@@ -14,8 +14,8 @@ set splitbelow                          " Horizontal splits will automatically b
 set splitright                          " Vertical splits will automatically be to the right
 set t_Co=256                            " Support 256 colors
 set conceallevel=0                      " So that I can see `` in markdown files
-set tabstop=2                           " Insert 2 spaces for a tab
-set shiftwidth=2                        " Change the number of space characters inserted for indentation
+set tabstop=4                           " Insert 2 spaces for a tab
+set shiftwidth=4                        " Change the number of space characters inserted for indentation
 set smarttab                            " Makes tabbing smarter will realize you have 2 vs 4
 set expandtab                           " Converts tabs to spaces
 set smartindent                         " Makes indenting smart
@@ -38,6 +38,16 @@ set textwidth=120
 set colorcolumn=+1                      " Reminder to enter new line at 80 characters
 set inccommand=nosplit                  " Live substitution
 let loaded_netrwPlugin = 1              " Don't load netrw
+" Disable swap file
+set nobackup
+set noswapfile
+
+" trigger `autoread` when files changes on disk
+  set autoread
+  autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
+" notification after file change
+  autocmd FileChangedShellPost *
+    \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 
 augroup highlight_yank
   autocmd!
