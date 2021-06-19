@@ -47,13 +47,13 @@ end
 -- Mappings for nvimtree
 
 vim.api.nvim_set_keymap(
-"n",
-"<leader>e",
-":NvimTreeToggle<CR>",
-{
-  noremap = true,
-  silent = true
-}
+    "n",
+    "<leader>e",
+    ":NvimTreeToggle<CR>",
+    {
+        noremap = true,
+        silent = true
+    }
 )
 
 g.nvim_tree_bindings = {
@@ -81,5 +81,8 @@ g.nvim_tree_bindings = {
   ["[c"] = get_lua_cb("prev_git_item"),
   ["]c"] = get_lua_cb("next_git_item"),
   ["-"] = get_lua_cb("dir_up"),
-  ["q"] = get_lua_cb("close")
+  ["q"] = get_lua_cb("close"),
+  ["y"] = get_lua_cb("copy_name"),
+  ["Y"] = get_lua_cb("copy_path"),
+  ["gy"] = get_lua_cb("copy_absolute_path"),
 }

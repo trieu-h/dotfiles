@@ -41,6 +41,8 @@ let loaded_netrwPlugin = 1              " Don't load netrw
 " Disable swap file
 set nobackup
 set noswapfile
+" View diffs in vertical split
+set diffopt+=vertical
 
 " trigger `autoread` when files changes on disk
   set autoread
@@ -54,7 +56,13 @@ augroup highlight_yank
   au TextYankPost * silent! lua vim.highlight.on_yank { higroup='IncSearch', timeout=500 }
 augroup END
 
-
+" fix tmux background color mismatch
+if &term =~ '256color'
+    " disable Background Color Erase (BCE) so that color schemes
+    " render properly when inside 256-color tmux and GNU screen.
+    " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
+    set t_ut=
+endif
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
 
 " You can't stop me

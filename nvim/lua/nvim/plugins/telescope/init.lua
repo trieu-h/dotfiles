@@ -19,11 +19,8 @@ require("telescope").setup {
     sorting_strategy = "descending",
     layout_strategy = "horizontal",
     layout_defaults = {
-      horizontal = {
-        mirror = false,
-      },
       vertical = {
-        mirror = false,
+        mirror = true,
       },
     },
     file_sorter = require "telescope.sorters".get_fzy_sorter,
