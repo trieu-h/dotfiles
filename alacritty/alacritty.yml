@@ -36,7 +36,7 @@ colors:
     cursor: CellForeground
 
 
-background_opacity: 1
+background_opacity: 0.9
 
 font:
   normal:
