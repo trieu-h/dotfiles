@@ -1,1 +1,77 @@
-/Users/haitrieu/.gitconfig
+[http]
+	sslVerify = false
+[core]
+	excludesfile = /Users/haitrieu/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[user]
+	email = trieu.lehuynhhai@finantix.com
+[alias]
+	# Log
+	l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+	s = status
+	ss = status -s
+	# Branch
+	b = branch -v
+	ba = branch -a
+	bd = branch -D ; delete local branch
+	bdr = push --delete origin ; delete remote branch
+	br = branch -r
+	bc = rev-parse --abbrev-ref HEAD ; current branch name
+	bdr = "!f() { git push $1 :$2; }; f"
+	# Add
+	a = add
+	ai = add -i
+	aa = add --all
+	amend = commit --amend
+	#Restore
+	r = restore
+	rp = restore --patch
+	rs = restore --staged
+	# Fetch
+	fo = fetch origin --prune
+	fu = fetch upstream
+	# Push
+	po = push origin
+	# Pull
+	lo = pull origin
+	# Check out
+	co = checkout
+	cob = checkout -b
+	clb = checkout @{-1} ; check out last branch
+	# Diff
+	d = diff
+	ds = diff --stat
+	dc = diff --cached
+	# Commit
+	c = commit --verbose
+	ca =  commit -a --verbose
+	cm =  commit -m
+	cam =  commit -a -m
+	# Assume
+	assume = update-index --assume-unchanged
+	unassume = update-index --no-assume-unchanged
+	assumed = "!git ls-files -v | grep ^h | cut -c 3-"
+	unassumeall = "!git assumed | xargs git update-index --no-assume-unchanged"
+	assumeall = "!git st -s | awk {'print $2'} | xargs git assume"
+	# Stash
+  sa = stash apply
+  sc = stash clear
+  sd = stash drop
+  sl = stash list
+  sp = stash pop
+  ss = stash save
+  sw = stash show
+  sig= !git add -A && git stash && git stash drop
+  # Reset
+	re = reset
+	rh = reset HEAD
+	reh = reset --hard
+	rem = reset --mixed
+	res = reset --soft
+	# Other
+	la = "!git config -l | grep alias | cut -c 7-" ; list all aliases
