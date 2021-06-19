@@ -2,6 +2,7 @@
 	sslVerify = false
 [core]
 	excludesfile = /Users/haitrieu/.gitignore_global
+	editor = nvim
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path =
