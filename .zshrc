@@ -103,3 +103,6 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias nv="nvim"
 alias ls="ls -a"
+alias g="git"
+alias nv="~/Applications/nvim.appimage"
+alias tm="tmux"

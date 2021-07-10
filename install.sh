@@ -1,7 +1,7 @@
 #!/bin/sh
 CONFIG_DIR="$HOME/.config"
 
-echo -e "Create symlinks...."
+echo -e "Creating symlinks...."
 
 # Delete existing dot files and folders
 sudo rm -rf $HOME/.gitconfig
