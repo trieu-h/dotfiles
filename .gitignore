@@ -1,27 +1,17 @@
-Code/
-coc/
-google-chrome/
-evolution/
-dconf/
-configstore/
-gtk-3.0/
-ibus/
-gtk-4.0/
-pulse/
-nvim/autoload
-gnome-initial-setup-done
-nautilus/search-metadata
+# Blacklist files/folders in same directory as the .gitignore file
+/*
+
+# Whitelist files
+!.gitignore
+!.gitconfig
+!.tmux.conf
+!.zshrc
+!install.sh
+!README.md
+
+# Whitelist folder
+!alacritty/
+!nvim/
 nvim/.netrwhist
-mimeapps.list
-totem/state.ini
-user-dirs.dirs
-user-dirs.locale
-karabiner/automatic_backups/karabiner_20210327.json
-karabiner/karabiner.json
-libreoffice/
-lazygit/
-enchant/
-eog/
-gedit/
-ranger/plugins/ranger_devicons
-ranger/plugins/ranger_devicons
+nvim/autoload/plugged
+nvim/autoload/*

@@ -9,7 +9,6 @@ endif
 call plug#begin('~/.config/nvim/autoload/plugged')
 
     """"Lua Plugins""""
-
     Plug 'kyazdani42/nvim-web-devicons' " for file icons
     Plug 'kyazdani42/nvim-tree.lua'
 
@@ -29,7 +28,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'sbdchd/neoformat'
     Plug 'onsails/lspkind-nvim'
     Plug 'glepnir/lspsaga.nvim'
-
 
     " Telescope
     Plug 'nvim-lua/popup.nvim'
@@ -53,31 +51,44 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'matsuuu/pinkmare'
     Plug 'junegunn/seoul256.vim'
     Plug 'tpope/vim-surround'
+
     " Git integration
     Plug 'tpope/vim-fugitive'
     Plug 'stsewd/fzf-checkout.vim'
+
     " Extra spicy repeat
     Plug 'tpope/vim-repeat'
+
     " Vim DevIcons
     Plug 'ryanoasis/vim-devicons'
+
     " Indent object
     Plug 'michaeljsmith/vim-indent-object'
+
     "" Commenting
     Plug 'tpope/vim-commentary'
+
     "" Official vim plugin for ReScript.
     " Plug 'rescript-lang/vim-rescript'
+
     Plug 'matze/vim-move'
+
     "" Show white space
     Plug 'ntpeters/vim-better-whitespace'
+
     "" Multi cursor
     Plug 'mg979/vim-visual-multi'
+
     " Quote as a text obj
     Plug 'kana/vim-textobj-user'
     Plug 'beloglazov/vim-textobj-quotes'
+
     " Easy split/join
     Plug 'AndrewRadev/splitjoin.vim'
+
     " Easy-align
     Plug 'junegunn/vim-easy-align'
+
     " Zoom on split
     Plug 'szw/vim-maximizer'
 call plug#end()

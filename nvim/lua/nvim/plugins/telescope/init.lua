@@ -1,7 +1,8 @@
 local actions = require('telescope.actions')
+local themes = require('telescope.themes')
 
 require("telescope").setup {
-  defaults = {
+  defaults = themes.get_ivy {
     vimgrep_arguments = {
       "rg",
       "--color=never",
@@ -17,26 +18,14 @@ require("telescope").setup {
     initial_mode = "insert",
     selection_strategy = "reset",
     sorting_strategy = "descending",
-    layout_strategy = "horizontal",
-    layout_defaults = {
-      vertical = {
-        mirror = true,
-      },
-    },
     file_sorter = require "telescope.sorters".get_fzy_sorter,
     file_ignore_patterns = {},
-    shorten_path = true,
-    border = {},
-    borderchars = {"─", "│", "─", "│", "╭", "╮", "╯", "╰"},
+    path_display = {'absolute'},
+    -- path_display = {'tail'},
     color_devicons = true,
-    use_less = true,
-    results_height = 1,
-    shorten_path = true,
-    winblend = 0,
-    width = 0.75,
-    preview_cutoff = 120,
-    results_height = 1,
-    results_width = 0.8,
+    layout_config = {
+      height = 0.25,
+    },
     set_env = {["COLORTERM"] = "truecolor"}, -- default = nil,
     file_previewer = require "telescope.previewers".vim_buffer_cat.new,
     grep_previewer = require "telescope.previewers".vim_buffer_vimgrep.new,
@@ -83,6 +72,7 @@ vim.api.nvim_set_keymap("n", "<Leader>fb", [[<Cmd>lua require('telescope.builtin
 vim.api.nvim_set_keymap("n", "<Leader>fh", [[<Cmd>lua require('telescope.builtin').help_tags()<CR>]], opt)
 vim.api.nvim_set_keymap("n", "<Leader>fo", [[<Cmd>lua require('telescope.builtin').oldfiles()<CR>]], opt)
 vim.api.nvim_set_keymap("n", "<Leader>fg", [[<Cmd>lua require('telescope.builtin').live_grep()<CR>]], opt)
+vim.api.nvim_set_keymap("n", "<Leader>km", [[<Cmd>lua require('telescope.builtin').keymaps()<CR>]], opt)
 vim.api.nvim_set_keymap("n", "<Leader>fG", [[<Cmd>lua require('telescope.builtin').grep_string()<CR>]], opt)
 vim.api.nvim_set_keymap("n", "<Leader>gc", [[<Cmd>lua require('nvim.plugins.telescope').git_branches()<CR>]], opt)
 vim.api.nvim_set_keymap("n", "<Leader>vrc", [[<Cmd>lua require('nvim.plugins.telescope').search_dotfiles()<CR>]], opt)
