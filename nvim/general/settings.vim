@@ -24,9 +24,6 @@ set number                              " Line numbers
 set cursorline                          " Enable highlighting of the current line
 set background=dark                     " tell vim what the background color looks like
 set showtabline=2                       " Always show tabs
-" set noshowmode                          " We don't need to see things like -- INSERT -- anymore
-set nobackup                            " This is recommended by coc
-set nowritebackup                       " This is recommended by coc
 set updatetime=300                      " Faster completion
 set timeoutlen=500                      " By default timeoutlen is 1000 ms
 set clipboard=unnamedplus               " Copy paste between vim and everything else
@@ -38,6 +35,7 @@ set textwidth=120
 set colorcolumn=+1                      " Reminder to enter new line at 80 characters
 set inccommand=nosplit                  " Live substitution
 let loaded_netrwPlugin = 1              " Don't load netrw
+set termguicolors
 " Disable swap file
 set nobackup
 set noswapfile

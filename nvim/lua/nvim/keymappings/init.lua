@@ -23,7 +23,7 @@ vim.api.nvim_set_keymap("n","<S-CR>", "O<Esc>", { silent = true })
 vim.api.nvim_set_keymap("n","<CR>", "o<Esc>", { silent = true })
 
 -- Disable highlight after searching
-vim.api.nvim_set_keymap("n","<F1>", ":nohl<CR>", { silent = true })
+vim.api.nvim_set_keymap("n","<ESC><ESC>", ":nohl<CR>", { silent = true })
 
 -- Resize with arrows
 if vim.fn.has "mac" == 1 then
@@ -42,3 +42,7 @@ end
 vim.api.nvim_set_keymap("", "<leader>q", ":call QuickFixToggle()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "]q", ":cnext<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "[q", ":cprev<CR>", { noremap = true, silent = true })
+
+-- Expand-region remap
+vim.cmd 'map K <Plug>(expand_region_expand)'
+vim.cmd 'map J <Plug>(expand_region_shrink)'

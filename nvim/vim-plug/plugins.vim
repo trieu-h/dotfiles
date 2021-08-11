@@ -12,8 +12,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'kyazdani42/nvim-web-devicons' " for file icons
     Plug 'kyazdani42/nvim-tree.lua'
 
-    " Theme
-    Plug 'tiagovla/tokyodark.nvim'
+    " Themes
+    Plug 'matsuuu/pinkmare'
+    Plug 'kyazdani42/blue-moon'
+    Plug 'Shadorain/shadotheme'
 
     " Status line
     Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
@@ -45,11 +47,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'sindrets/diffview.nvim'
 
     """"VimL Plugins""""
-
-    " Theme related
-    Plug 'colepeters/spacemacs-theme.vim'
-    Plug 'matsuuu/pinkmare'
-    Plug 'junegunn/seoul256.vim'
     Plug 'tpope/vim-surround'
 
     " Git integration
@@ -91,4 +88,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Zoom on split
     Plug 'szw/vim-maximizer'
+
+    " Other
+    Plug 'terryma/vim-expand-region'
 call plug#end()
+
+set termguicolors
+colorscheme blue-moon
