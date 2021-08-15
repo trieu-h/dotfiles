@@ -12,6 +12,7 @@
 # Whitelist folder
 !alacritty/
 !nvim/
+!i3/
 nvim/.netrwhist
 nvim/autoload/plugged
 nvim/autoload/*
