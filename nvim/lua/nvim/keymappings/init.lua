@@ -44,5 +44,5 @@ vim.api.nvim_set_keymap("n", "]q", ":cnext<CR>", { noremap = true, silent = true
 vim.api.nvim_set_keymap("n", "[q", ":cprev<CR>", { noremap = true, silent = true })
 
 -- Expand-region remap
-vim.cmd 'map K <Plug>(expand_region_expand)'
-vim.cmd 'map J <Plug>(expand_region_shrink)'
+vim.cmd 'map L <Plug>(expand_region_expand)'
+vim.cmd 'map H <Plug>(expand_region_shrink)'

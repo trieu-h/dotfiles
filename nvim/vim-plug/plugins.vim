@@ -16,6 +16,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'matsuuu/pinkmare'
     Plug 'kyazdani42/blue-moon'
     Plug 'Shadorain/shadotheme'
+    Plug 'embark-theme/vim', { 'as': 'embark' }
 
     " Status line
     Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}

@@ -1,7 +1,9 @@
 local cmd = vim.cmd
 local g = vim.g
 
-vim.o.termguicolors = true
+require("nvim-tree.events").on_nvim_tree_ready(function()
+    vim.cmd("NvimTreeRefresh")
+end)
 
 g.nvim_tree_side = "left"
 g.nvim_tree_width = 30
@@ -53,17 +55,23 @@ g.nvim_tree_icons = {
    }
 }
 
-local get_lua_cb = function(cb_name)
-  return string.format(":lua require'nvim-tree'.on_keypress('%s')<CR>", cb_name)
-end
-
 -- Mappings for nvimtree
+local opts = {
+    noremap = true,
+    silent = true
+}
+
 vim.api.nvim_set_keymap(
     "n",
     "<leader>e",
     ":NvimTreeToggle<CR>",
-    {
-        noremap = true,
-        silent = true
-    }
+    opts
 )
+
+vim.api.nvim_set_keymap(
+    "n",
+    "<leader>re",
+    ":NvimTreeFocus<CR>",
+    opts
+)
+

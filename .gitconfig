@@ -60,15 +60,15 @@
 	unassumeall = "!git assumed | xargs git update-index --no-assume-unchanged"
 	assumeall = "!git st -s | awk {'print $2'} | xargs git assume"
 	# Stash
-  sa = stash apply
-  sc = stash clear
-  sd = stash drop
-  sl = stash list
-  sp = stash pop
-  ss = stash save
-  sw = stash show
-  sig= !git add -A && git stash && git stash drop
-  # Reset
+    sa = stash apply
+    sc = stash clear
+    sd = stash drop
+    sl = stash list
+    sp = stash pop
+    ss = stash save
+    sw = stash show
+    sig= !git add -A && git stash && git stash drop
+    # Reset
 	re = reset
 	rh = reset HEAD
 	reh = reset --hard
@@ -76,3 +76,4 @@
 	res = reset --soft
 	# Other
 	la = "!git config -l | grep alias | cut -c 7-" ; list all aliases
+	deletemerged = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d" ; Delete all branches that have already been merged into the current branch

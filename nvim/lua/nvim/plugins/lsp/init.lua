@@ -17,10 +17,7 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<Leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
   buf_set_keymap('n', '<Leader>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
   buf_set_keymap('n', '<Leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-  buf_set_keymap('n', '<Leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
   buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-  buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
-  buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
   buf_set_keymap('n', '<Leader>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
 
   -- Set some keybinds conditional on server capabilities
@@ -64,6 +61,8 @@ saga.init_lsp_saga {
   border_style = "round",
 }
 
-vim.api.nvim_set_keymap("n", "<C-j>", "<Cmd>Lspsaga diagnostic_jump_next<CR>", { silent = true })
+vim.api.nvim_set_keymap("n", "]d", "<Cmd>Lspsaga diagnostic_jump_next<CR>", { silent = true })
+vim.api.nvim_set_keymap("n", "[d", "<Cmd>Lspsaga diagnostic_jump_prev<CR>", { silent = true })
+vim.api.nvim_set_keymap("n", "gr", ":Lspsaga rename<CR>", { silent = true })
 vim.api.nvim_set_keymap("n", "gh", "<Cmd>Lspsaga hover_doc<CR>", { silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>ca", ":Lspsaga code_action<CR>", { silent = true})
