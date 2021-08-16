@@ -13,6 +13,7 @@
 !alacritty/
 !nvim/
 !i3/
+!i3status/
 nvim/.netrwhist
 nvim/autoload/plugged
 nvim/autoload/*
