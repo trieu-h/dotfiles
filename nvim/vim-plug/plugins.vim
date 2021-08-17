@@ -93,6 +93,3 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Other
     Plug 'terryma/vim-expand-region'
 call plug#end()
-
-set termguicolors
-colorscheme blue-moon
