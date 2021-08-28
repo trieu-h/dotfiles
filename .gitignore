@@ -14,6 +14,8 @@
 !nvim/
 !i3/
 !i3status/
+!dunst/
+!.emacs.d/
 nvim/.netrwhist
 nvim/autoload/plugged
 nvim/autoload/*

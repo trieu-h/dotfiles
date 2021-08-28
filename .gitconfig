@@ -77,3 +77,6 @@
 	# Other
 	la = "!git config -l | grep alias | cut -c 7-" ; list all aliases
 	deletemerged = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d" ; Delete all branches that have already been merged into the current branch
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
