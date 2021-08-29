@@ -16,6 +16,12 @@
 !i3status/
 !dunst/
 !.emacs.d/
+
+#Blacklist folder
 nvim/.netrwhist
 nvim/autoload/plugged
 nvim/autoload/*
+.emacs.d/auto-save-list
+.emacs.d/network-security.data
+.emacs.d/elpa
+.emacs.d/smex-items
