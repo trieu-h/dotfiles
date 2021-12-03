@@ -1,32 +1,28 @@
-# Colors (Seoul256)
 colors:
-  # Default colors
   primary:
-    background: '#3a3a3a'
-    foreground: '#d0d0d0'
-
-  # Normal colors
+    background: '#5a5475'
+    foreground: '#f8f8f2'
+  cursor:
+    text: '#f8f8f2'
+    cursor: '#c7b7c7'
   normal:
-    black:   '#4e4e4e'
-    red:     '#d68787'
-    green:   '#5f865f'
-    yellow:  '#d8af5f'
-    blue:    '#85add4'
-    magenta: '#d7afaf'
-    cyan:    '#87afaf'
-    white:   '#d0d0d0'
-
-  # Bright colors
+    black: '#3b3a32'
+    red: '#f1756f'
+    green: '#6de874'
+    yellow: '#e6c000'
+    blue: '#a381ff'
+    magenta: '#ff87b1'
+    cyan: '#7ef5b8'
+    white: '#c7b7c7'
   bright:
-    black:   '#626262'
-    red:     '#d75f87'
-    green:   '#87af87'
-    yellow:  '#ffd787'
-    blue:    '#add4fb'
-    magenta: '#ffafaf'
-    cyan:    '#87d7d7'
-    white:   '#e4e4e4'
-
+    black: '#685868'
+    red: '#ff9f9a'
+    green: '#7bfa81'
+    yellow: '#ffea00'
+    blue: '#c5a3ff'
+    magenta: '#ffb8d1'
+    cyan: '#c2ffdf'
+    white: '#ffefff'
   # Cursor colors
   #
   # Colors which should be used to draw the terminal cursor. If these are unset,
@@ -35,8 +31,7 @@ colors:
     text: CellBackground
     cursor: CellForeground
 
-
-background_opacity: 0.9
+background_opacity: 1
 
 font:
   normal:
