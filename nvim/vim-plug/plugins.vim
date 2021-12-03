@@ -17,6 +17,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Status line
     Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
+    Plug 'akinsho/bufferline.nvim'
 
     " Highlight color
     Plug 'norcalli/nvim-colorizer.lua'
@@ -93,4 +94,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'terryma/vim-expand-region'
 
     Plug 'jpalardy/vim-slime'
+
+    "Better buffet deletion
+    Plug 'ojroques/nvim-bufdel'
 call plug#end()
