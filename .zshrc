@@ -21,9 +21,9 @@ fancy-ctrl-z () {
 }
 zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
-# keep folder vim and terminal same
 
 alias nv="nvim"
+alias lz="lazygit"
 alias ls="ls -a"
 alias g="git"
 alias nv="~/Applications/nvim.appimage"
