@@ -1,5 +1,30 @@
 local nvim_lsp = require('lspconfig')
 local saga = require('lspsaga')
+local uv = vim.loop
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+local function organize_imports()
+  local params = {
+    command = "_typescript.organizeImports",
+    arguments = {vim.api.nvim_buf_get_name(0)},
+    title = ""
+  }
+  vim.lsp.buf.execute_command(params)
+end
+
+local function get_node_modules(root_dir)
+  local root_node = root_dir .. "/node_modules"
+  local stats = uv.fs_stat(root_node)
+  if stats == nil then
+    return nil
+  else
+    return root_node
+  end
+end
+
+local default_node_modules = get_node_modules(vim.fn.getcwd())
 
 local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
@@ -48,9 +73,62 @@ end
 --
 -- Use a loop to conveniently both setup defined servers
 -- and map buffer local keybindings when the language server attaches
-local servers = { "tsserver", "angularls", "cssls", "html", "ocamllsp"}
+local servers = {"ocamllsp"}
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup { on_attach = on_attach }
+end
+
+local ngls_cmd = {
+  "ngserver",
+  "--stdio",
+  "--tsProbeLocations",
+  default_node_modules,
+  "--ngProbeLocations",
+  default_node_modules,
+  "--experimental-ivy"
+}
+
+nvim_lsp.angularls.setup {
+  cmd = ngls_cmd,
+  on_attach = on_attach,
+  capabilities = capabilities,
+  on_new_config = function(new_config)
+    new_config.cmd = ngls_cmd
+  end
+}
+
+nvim_lsp.tsserver.setup {
+  filetypes = {
+    "javascript",
+    "javascriptreact",
+    "javascript.jsx",
+    "typescript",
+    "typescriptreact",
+    "typescript.tsx"
+    -- "vue"
+  },
+  on_attach = on_attach,
+  capabilities = capabilities,
+  commands = {
+    OrganizeImports = {
+      organize_imports,
+      description = "Organize Imports"
+    }
+  }
+}
+
+local vs_code_extracted = {
+  html = "vscode-html-language-server",
+  cssls = "vscode-css-language-server",
+  vimls = "vim-language-server"
+}
+
+for ls, cmd in pairs(vs_code_extracted) do
+  nvim_lsp[ls].setup {
+    cmd = {cmd, "--stdio"},
+    on_attach = on_attach,
+    capabilities = capabilities
+  }
 end
 
 saga.init_lsp_saga {
