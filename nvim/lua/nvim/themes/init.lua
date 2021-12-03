@@ -1,1 +1,2 @@
-vim.cmd("colorscheme embark")
+vim.cmd("colorscheme fairyfloss")
+

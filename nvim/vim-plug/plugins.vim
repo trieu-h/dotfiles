@@ -13,10 +13,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'kyazdani42/nvim-tree.lua'
 
     " Themes
-    Plug 'matsuuu/pinkmare'
-    Plug 'kyazdani42/blue-moon'
-    Plug 'Shadorain/shadotheme'
-    Plug 'embark-theme/vim', { 'as': 'embark' }
+    Plug 'tssm/fairyfloss.vim'
 
     " Status line
     Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
@@ -66,9 +63,11 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     "" Commenting
     Plug 'tpope/vim-commentary'
 
-    "" Official vim plugin for ReScript.
-    " Plug 'rescript-lang/vim-rescript'
+    " Rust
+    Plug 'simrat39/rust-tools.nvim'
+    Plug 'mfussenegger/nvim-dap'
 
+    " Move lines
     Plug 'matze/vim-move'
 
     "" Show white space
@@ -92,4 +91,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Other
     Plug 'terryma/vim-expand-region'
+
+    Plug 'jpalardy/vim-slime'
 call plug#end()

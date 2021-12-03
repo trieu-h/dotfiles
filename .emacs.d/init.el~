@@ -1,0 +1,34 @@
+; Package
+(add-to-list 'custom-theme-load-path "~/.config/.emacs.d/themes/")
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   '("583148e87f779040b5349db48b6fcad6fe9a873c6ada20487e9a1ec40d845505" "3325e2c49c8cc81a8cc94b0d57f1975e6562858db5de840b03338529c64f58d1" default))
+ '(gnutls-algorithm-priority "normal:-vers-tls1.3")
+ '(package-selected-packages '(smex)))
+
+(require 'package)
+(setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
+                         ("marmalade" . "https://marmalade-repo.org/packages/")
+                         ("melpa" . "https://melpa.org/packages/")))
+
+(setq package-check-signature nil)
+(setq inhibit-startup-screen t)
+(menu-bar-mode 0)
+(tool-bar-mode 0)
+
+(ido-mode 1)
+(ido-everywhere 1)
+(ido-ubiquitous-mode 1)
+
+(global-set-key (kbd "M-x") 'smex)
+
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
