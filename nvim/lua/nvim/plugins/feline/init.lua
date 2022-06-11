@@ -22,42 +22,41 @@ local colors = {
 }
 
 local vi_mode_colors = {
-  NORMAL = colors.silver,
-  INSERT = colors.dark_gray,
-  VISUAL = colors.silver,
-  OP = colors.silver,
-  LINES = colors.silver,
-  BLOCK = colors.silver,
-  REPLACE = colors.fuschia,
+  NORMAL        = colors.silver,
+  INSERT        = colors.dark_gray,
+  VISUAL        = colors.silver,
+  OP            = colors.silver,
+  LINES         = colors.silver,
+  BLOCK         = colors.silver,
+  REPLACE       = colors.fuschia,
   ['V-REPLACE'] = colors.fuschia,
-  COMMAND = colors.silver,
-
-  ENTER = colors.cyan,
-  MORE = colors.cyan,
-  SELECT = colors.orange,
-  SHELL = colors.green,
-  TERM = colors.green,
-  NONE = colors.yellow
+  COMMAND       = colors.silver,
+  ENTER         = colors.silver,
+  MORE          = colors.silver,
+  SELECT        = colors.silver,
+  SHELL         = colors.silver,
+  TERM          = colors.silver,
+  NONE          = colors.silver,
 }
 
 local vi_mode_bg = {
-  NORMAL = colors.lavender,
-  INSERT = colors.dark_seafoam,
-  VISUAL = colors.fuschia,
-  OP = colors.lavender,
-  LINES = colors.fuschia,
-  BLOCK = colors.fuschia,
-  REPLACE = colors.dark_gray,
+  NORMAL        = colors.lavender,
+  INSERT        = colors.dark_seafoam,
+  VISUAL        = colors.fuschia,
+  OP            = colors.lavender,
+  LINES         = colors.fuschia,
+  BLOCK         = colors.fuschia,
+  REPLACE       = colors.dark_gray,
   ['V-REPLACE'] = colors.dark_gray,
-  COMMAND = colors.lavender,
-
-  ENTER = colors.cyan,
-  MORE = colors.cyan,
-  SELECT = colors.orange,
-  SHELL = colors.green,
-  TERM = colors.green,
-  NONE = colors.yellow
+  COMMAND       = colors.lavender,
+  ENTER         = colors.lavender,
+  MORE          = colors.lavender,
+  SELECT        = colors.lavender,
+  SHELL         = colors.lavender,
+  TERM          = colors.lavender,
+  NONE          = colors.lavender,
 }
+
 
 local function get_vi_mode_bg(mode)
   return vi_mode_bg[mode];
@@ -99,7 +98,7 @@ local comps = {
   vi_mode = {
     left = {
       provider = function()
-        return string.format(" %s ", vi_mode_utils.get_vim_mode())
+        return string.format(" %s  ", vi_mode_utils.get_vim_mode())
       end,
       hl = function()
         local val = {
@@ -187,7 +186,6 @@ local comps = {
       return val
     end,
   },
-
   scroll_bar = {
     provider = 'scroll_bar',
     left_sep = left_sep,
@@ -258,9 +256,14 @@ local comps = {
     branch = {
       provider = 'git_branch',
       icon = ' ',
-      left_sep = ' ',
+      left_sep = {
+        str = ' ',
+        hl = {
+          bg = colors.lavender
+        }
+      },
       hl = {
-        -- fg = colors.violet,
+        fg = colors.shadow,
         bg = colors.lavender,
         style = 'bold'
       },
@@ -268,22 +271,25 @@ local comps = {
     add = {
       provider = 'git_diff_added',
       hl = {
+        fg = colors.dark_seafoam,
         bg = colors.lavender,
-        -- fg = colors.green
+        style = 'bold'
       }
     },
     change = {
       provider = 'git_diff_changed',
       hl = {
+        fg = colors.gold,
         bg = colors.lavender,
-        -- fg = colors.orange
+        style = 'bold'
       }
     },
     remove = {
       provider = 'git_diff_removed',
       hl = {
+        fg = colors.fuschia,
         bg = colors.lavender,
-        -- fg = colors.red
+        style = 'bold'
       }
     }
   }
@@ -303,16 +309,16 @@ table.insert(components.inactive, {})
 
 table.insert(components.active[1], comps.vi_mode.left)
 table.insert(components.active[1], comps.file.info)
-table.insert(components.active[1], comps.git.branch)
-table.insert(components.active[1], comps.git.add)
-table.insert(components.active[1], comps.git.change)
-table.insert(components.active[1], comps.git.remove)
 table.insert(components.inactive[1], comps.vi_mode.left)
 table.insert(components.inactive[1], comps.file.info)
 table.insert(components.active[3], comps.diagnos.err)
 table.insert(components.active[3], comps.diagnos.warn)
 table.insert(components.active[3], comps.diagnos.hint)
 table.insert(components.active[3], comps.diagnos.info)
+table.insert(components.active[3], comps.git.branch)
+table.insert(components.active[3], comps.git.add)
+table.insert(components.active[3], comps.git.change)
+table.insert(components.active[3], comps.git.remove)
 table.insert(components.active[3], comps.lsp.name)
 table.insert(components.active[3], comps.file.os)
 table.insert(components.active[3], comps.file.position)

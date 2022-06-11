@@ -1,10 +1,3 @@
--- Better nav for omnicomplete
-vim.cmd 'inoremap <expr> <c-j> ("\\<C-n>")'
-vim.cmd 'inoremap <expr> <c-k> ("\\<C-p>")'
-
--- Remap escape
-vim.api.nvim_set_keymap("i", "jj", "<ESC>", { noremap = true, silent = true })
-
 -- Tab switch buffer
 vim.cmd('inoremap <expr> <TAB> (\"\\<C-n>\")')
 vim.cmd('inoremap <expr> <S-TAB> (\"\\<C-p>\")')
@@ -22,8 +15,8 @@ vim.api.nvim_set_keymap("n", "<C-l>", "<C-w>l", { silent = true })
 vim.api.nvim_set_keymap("n","<S-CR>", "O<Esc>", { silent = true })
 vim.api.nvim_set_keymap("n","<CR>", "o<Esc>", { silent = true })
 
--- Disable highlight after searching
-vim.api.nvim_set_keymap("n","<ESC><ESC>", ":nohl<CR>", { silent = true })
+-- -- Disable highlight after searching
+-- vim.api.nvim_set_keymap("n","<ESC><ESC>", ":nohl<CR>", { silent = true })
 
 -- Resize with arrows
 if vim.fn.has "mac" == 1 then
@@ -42,10 +35,6 @@ end
 vim.api.nvim_set_keymap("", "<leader>q", ":call QuickFixToggle()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "]q", ":cnext<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "[q", ":cprev<CR>", { noremap = true, silent = true })
-
--- Expand-region remap
-vim.cmd 'map L <Plug>(expand_region_expand)'
-vim.cmd 'map H <Plug>(expand_region_shrink)'
 
 -- Maximizer plugin
 vim.api.nvim_set_keymap("n", "<F3>", ":MaximizerToggle<CR>", { noremap = true, silent = true})

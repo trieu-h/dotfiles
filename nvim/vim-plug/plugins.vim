@@ -13,7 +13,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'kyazdani42/nvim-tree.lua'
 
     " Themes
-    Plug 'tssm/fairyfloss.vim'
+    Plug 'trieu-h/fairyfloss.vim'
 
     " Status line
     Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
@@ -44,7 +44,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Git stuff
     Plug 'sindrets/diffview.nvim'
-    Plug 'kdheepak/lazygit.nvim'
+    Plug 'lewis6991/gitsigns.nvim'
 
     """"VimL Plugins""""
     Plug 'tpope/vim-surround'
