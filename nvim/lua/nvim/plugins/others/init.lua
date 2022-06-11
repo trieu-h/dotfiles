@@ -6,3 +6,6 @@ vim.api.nvim_set_keymap("n", "ga", "<Plug>(EasyAlign)", {})
 
 -- Better Whitespace Plugin
 vim.g.better_whitespace_enabled = 1
+
+-- Nvim-metals require this settings
+vim.opt_global.shortmess:remove("F")

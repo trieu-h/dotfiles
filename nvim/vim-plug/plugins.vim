@@ -16,8 +16,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tssm/fairyfloss.vim'
 
     " Status line
-    Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
-    Plug 'akinsho/bufferline.nvim'
+    Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
+    Plug 'feline-nvim/feline.nvim'
 
     " Highlight color
     Plug 'norcalli/nvim-colorizer.lua'
@@ -44,12 +44,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Git stuff
     Plug 'sindrets/diffview.nvim'
+    Plug 'kdheepak/lazygit.nvim'
 
     """"VimL Plugins""""
     Plug 'tpope/vim-surround'
 
     " Git integration
-    Plug 'tpope/vim-fugitive'
     Plug 'stsewd/fzf-checkout.vim'
 
     " Extra spicy repeat
@@ -91,10 +91,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'szw/vim-maximizer'
 
     " Other
-    Plug 'terryma/vim-expand-region'
-
     Plug 'jpalardy/vim-slime'
 
-    "Better buffet deletion
+    "Better buffet deletion"
     Plug 'ojroques/nvim-bufdel'
+
+    " Terminal
+    Plug 'akinsho/toggleterm.nvim'
+
 call plug#end()

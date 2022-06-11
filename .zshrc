@@ -30,3 +30,5 @@ alias nv="~/Applications/nvim.appimage"
 alias dot="~/.config"
 alias project="~/Project/Personal"
 alias tm="tmux"
+alias idea="~/Downloads/idea-IC-212.5457.46/bin/idea.sh"
+[ -f "/home/haitrieu/.ghcup/env" ] && source "/home/haitrieu/.ghcup/env" # ghcup-env
