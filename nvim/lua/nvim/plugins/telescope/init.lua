@@ -2,7 +2,7 @@ local actions = require('telescope.actions')
 local themes = require('telescope.themes')
 
 require("telescope").setup {
-  defaults = themes.get_ivy {
+  defaults = themes.get_dropdown {
     vimgrep_arguments = {
       "rg",
       "--color=never",
@@ -23,9 +23,11 @@ require("telescope").setup {
     path_display = {'absolute'},
     -- path_display = {'tail'},
     color_devicons = true,
-    layout_config = {
-      height = 0.25,
-    },
+    -- layout_config = {
+    --   vertical = {
+    --     width = 0.5
+    --   }
+    -- },
     set_env = {["COLORTERM"] = "truecolor"}, -- default = nil,
     file_previewer = require "telescope.previewers".vim_buffer_cat.new,
     grep_previewer = require "telescope.previewers".vim_buffer_vimgrep.new,

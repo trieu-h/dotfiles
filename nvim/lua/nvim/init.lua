@@ -1,5 +1,4 @@
 require('nvim.keymappings')
-require('nvim.themes')
 require('nvim.plugins.colorizer')
 require('nvim.plugins.feline')
 require('nvim.plugins.lsp')  -- Remember to install language servers via npm // TODO: Make a script to automate this process
@@ -17,4 +16,4 @@ require("numb").setup{
 }
 require('gitsigns').setup()
 require("nvim.plugins.toggleterm")
-
+require('nvim.themes')

@@ -10,7 +10,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     """"Lua Plugins""""
     Plug 'kyazdani42/nvim-web-devicons' " for file icons
-    Plug 'kyazdani42/nvim-tree.lua'
+    Plug 'nvim-neo-tree/neo-tree.nvim', {'branch': 'v2.x'}
+    Plug 'MunifTanjim/nui.nvim'
+    " Plug 'kyazdani42/nvim-tree.lua'
 
     " Themes
     Plug 'trieu-h/fairyfloss.vim'

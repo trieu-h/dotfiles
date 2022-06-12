@@ -329,5 +329,5 @@ require'feline'.setup {
   colors = { bg = colors.gray, fg = colors.dark_gray },
   components = components,
   vi_mode_colors = vi_mode_colors,
-  disable = { filetypes = { "^NvimTree$" } }
+  disable = { filetypes = { "^NvimTree$", "^neo%-tree$" } }
 }
