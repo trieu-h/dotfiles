@@ -31,7 +31,7 @@ colors:
     text: CellBackground
     cursor: CellForeground
 
-background_opacity: 0.9
+background_opacity: 1
 
 font:
   normal:
@@ -48,7 +48,7 @@ font:
     style: Bold Italic
 
   # Point size
-  size: 8.0
+  size: 14.0
 
   offset:
     x: 0
@@ -85,7 +85,6 @@ cursor:
 draw_bold_text_with_bright_colors: true
 
 selection:
-
   semantic_escape_chars: ',│`|:"'' ()[]{}<>'
   save_to_clipboard: true
 
