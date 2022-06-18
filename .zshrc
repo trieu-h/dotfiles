@@ -22,6 +22,20 @@ fancy-ctrl-z () {
 zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
 
+# For when I use external keyboard
+toggle-keyboard() {
+  local device='AT Translated Set 2 keyboard'
+  local enabled=$(xinput list-props $device | grep 'Device Enabled' | grep -o '[01]$')
+  if [[ $enabled -eq 1 ]]
+  then
+    xinput disable $device
+    echo "Laptop keyboard disabled"
+  else
+    xinput enable $device
+    echo "Laptop keyboard enabled"
+  fi
+}
+
 alias nv="nvim"
 alias lz="lazygit"
 alias ls="ls -a"
