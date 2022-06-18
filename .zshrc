@@ -35,6 +35,8 @@ toggle-keyboard() {
   fi
 }
 
+setxkbmap -layout us -option ctrl:swapcaps
+
 alias nv="nvim"
 alias lz="lazygit"
 alias ls="ls -a"
