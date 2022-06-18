@@ -1,4 +1,3 @@
-export PATH=$HOME/bin:/usr/local/bin:$PATH
 export ZSH="/home/haitrieu/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
@@ -46,3 +45,7 @@ alias project="~/Project/Personal"
 alias tm="tmux"
 alias idea="~/Downloads/idea-IC-212.5457.46/bin/idea.sh"
 [ -f "/home/haitrieu/.ghcup/env" ] && source "/home/haitrieu/.ghcup/env" # ghcup-env
+
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
+export PATH=$HOME/bin:/usr/local/bin:$PATH:$GOBIN
