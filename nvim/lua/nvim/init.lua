@@ -1,3 +1,4 @@
+require('nvim.settings')
 require('nvim.keymappings')
 require('nvim.plugins.colorizer')
 require('nvim.plugins.feline')

@@ -1,3 +1,14 @@
+require("nvim-lsp-installer").setup({
+    automatic_installation = true, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
+    ui = {
+        icons = {
+            server_installed = "✓",
+            server_pending = "➜",
+            server_uninstalled = "✗"
+        }
+    }
+})
+
 local nvim_lsp = require('lspconfig')
 local saga = require('lspsaga')
 local uv = vim.loop
@@ -56,9 +67,9 @@ local on_attach = function(client, bufnr)
   -- Set autocommands conditional on server_capabilities
   if client.resolved_capabilities.document_highlight then
     vim.api.nvim_exec([[
-      hi LspReferenceRead cterm=bold ctermbg=red guibg=LightYellow
-      hi LspReferenceText cterm=bold ctermbg=red guibg=LightYellow
-      hi LspReferenceWrite cterm=bold ctermbg=red guibg=LightYellow
+      hi LspReferenceRead cterm=bold ctermbg=red guibg=#d2e0ff2f
+      hi LspReferenceText cterm=bold ctermbg=red guibg=#d2e0ff2f
+      hi LspReferenceWrite cterm=bold ctermbg=red guibg=#d2e0ff2f
       augroup lsp_document_highlight
         autocmd! * <buffer>
         autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
@@ -73,7 +84,7 @@ end
 --
 -- Use a loop to conveniently both setup defined servers
 -- and map buffer local keybindings when the language server attaches
-local servers = {"ocamllsp"}
+local servers = {"ocamllsp", "sumneko_lua"}
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup { on_attach = on_attach }
 end
