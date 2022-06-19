@@ -1,6 +1,8 @@
 if not pcall(require, "feline") then
-  return
-end
+  return end
+
+local lsp = require 'feline.providers.lsp'
+local vi_mode_utils = require 'feline.providers.vi_mode'
 
 local colors = {
   shadow           = '#4b3a32';
@@ -57,7 +59,6 @@ local vi_mode_bg = {
   NONE          = colors.lavender,
 }
 
-
 local function get_vi_mode_bg(mode)
   return vi_mode_bg[mode];
 end
@@ -75,22 +76,53 @@ local function file_osinfo()
   return icon .. os
 end
 
-local lsp = require 'feline.providers.lsp'
-local vi_mode_utils = require 'feline.providers.vi_mode'
-local fmt = string.format
+local function create_sep(str, bgColor, fgColor)
+  return {
+    str = str,
+    hl = function()
+      local val = {
+        bg = bgColor,
+        fg = fgColor
+      }
+      return val
+    end,
+ }
+end
 
 local left_sep = {
-  str = ' ',
-  hl = function()
+    str = " ",
+    hl = function()
+      local val = {
+        bg = get_vi_mode_bg(vi_mode_utils.get_vim_mode()),
+      }
+      return val
+    end,
+}
+
+local right_sep = {
+  str = "right_filled",
+  hl = function ()
     local val = {
-      bg = get_vi_mode_bg(vi_mode_utils.get_vim_mode()),
+      bg = colors.lavender,
+      fg = get_vi_mode_bg(vi_mode_utils.get_vim_mode()),
     }
     return val
   end,
 }
 
-local lsp_get_diag = function(str)
-  local count = vim.lsp.diagnostic.get_count(0, str)
+local diagnos_err_sep = create_sep(" ", colors.fuschia)
+local diagnos_warn_sep = create_sep(" ", colors.goldenrod)
+local diagnos_info_sep = create_sep(" ", colors.dark_seafoam)
+local diagnos_hint_sep = create_sep(" ", colors.dusty_lilac)
+
+local function table_length(T)
+  local count = 0
+  for _ in pairs(T) do count = count + 1 end
+  return count
+end
+
+local lsp_get_diag = function(severity)
+  local count = table_length(vim.diagnostic.get(0, {severity = severity}))
   return (count > 0) and ' '..count..' ' or ''
 end
 
@@ -98,8 +130,9 @@ local comps = {
   vi_mode = {
     left = {
       provider = function()
-        return string.format(" %s  ", vi_mode_utils.get_vim_mode())
+        return string.format(" %s ", vi_mode_utils.get_vim_mode())
       end,
+      right_sep = right_sep,
       hl = function()
         local val = {
           name = vi_mode_utils.get_mode_highlight_name(),
@@ -113,6 +146,7 @@ local comps = {
   },
   file = {
     info = {
+      left_sep = create_sep(" ", colors.lavender),
       provider = {
         name = 'file_info',
         opts = {
@@ -167,13 +201,6 @@ local comps = {
     },
   },
 
-  left_end = {
-    provider = function() return '' end,
-    hl = {
-      -- fg = colors.bg,
-      -- bg = colors.blue,
-    }
-  },
   line_percentage = {
     provider = 'line_percentage',
     left_sep = left_sep,
@@ -201,55 +228,79 @@ local comps = {
   diagnos = {
     err = {
       provider = function()
-        return '' .. lsp_get_diag("Error")
+        return '' .. lsp_get_diag(vim.diagnostic.severity.ERROR)
       end,
+      left_sep = diagnos_err_sep,
+      right_sep = diagnos_err_sep,
       enabled = function() return lsp.diagnostics_exist('Error') end,
       hl = {
-        fg = colors.red
+        bg = colors.fuschia,
+        fg = colors.dark_gray,
+        style = 'bold'
       }
     },
     warn = {
       provider = function()
-        return '' ..  lsp_get_diag("Warn")
+        return '' ..  lsp_get_diag(vim.diagnostic.severity.WARN)
       end,
-      -- left_sep = ' ',
+      left_sep = diagnos_warn_sep,
+      right_sep = diagnos_warn_sep,
       enabled = function() return lsp.diagnostics_exist('Warn') end,
       hl = {
-        -- fg = colors.yellow
+        bg = colors.goldenrod,
+        fg = colors.dark_gray,
+        style = 'bold'
       }
     },
     info = {
       provider = function()
-        return '' .. lsp_get_diag("Info")
+        return '' .. lsp_get_diag(vim.diagnostic.severity.INFO)
       end,
-      -- left_sep = ' ',
+      left_sep = diagnos_info_sep,
+      right_sep = diagnos_info_sep,
       enabled = function() return lsp.diagnostics_exist('Info') end,
       hl = {
-        -- fg = colors.blue
+        bg = colors.dark_seafoam,
+        fg = colors.dark_gray,
+        style = 'bold'
       }
     },
     hint = {
-      -- provider = 'diagnostic_hints',
       provider = function()
-        return '' .. lsp_get_diag("Hint")
+        return '' .. lsp_get_diag(vim.diagnostic.severity.HINT)
       end,
-      -- left_sep = ' ',
+      left_sep = diagnos_hint_sep,
+      right_sep = diagnos_hint_sep,
       enabled = function() return lsp.diagnostics_exist('Hint') end,
       hl = {
-        -- fg = colors.cyan
+        fg = colors.dark_gray,
+        bg = colors.dusty_lilac,
+        style = 'bold'
       }
     },
   },
   lsp = {
     name = {
       provider = 'lsp_client_names',
-      -- left_sep = ' ',
-      right_sep = ' ',
-      -- icon = '  ',
-      icon = '慎',
-      hl = {
-        -- fg = colors.yellow
-      }
+      left_sep = {
+        str = "left_filled",
+        hl = function ()
+          local val = {
+            bg = colors.lavender,
+            fg = get_vi_mode_bg(vi_mode_utils.get_vim_mode()),
+          }
+          return val
+        end,
+      },
+      icon = ' 慎',
+      hl = function ()
+        local val = {
+          fg = vi_mode_utils.get_mode_color(),
+          bg = get_vi_mode_bg(vi_mode_utils.get_vim_mode()),
+          style = 'bold'
+        }
+        return val
+      end,
     }
   },
   git = {
@@ -302,7 +353,6 @@ local components = {
 
 table.insert(components.active, {})
 table.insert(components.active, {})
-table.insert(components.active, {})
 table.insert(components.inactive, {})
 table.insert(components.inactive, {})
 table.insert(components.inactive, {})
@@ -311,19 +361,19 @@ table.insert(components.active[1], comps.vi_mode.left)
 table.insert(components.active[1], comps.file.info)
 table.insert(components.inactive[1], comps.vi_mode.left)
 table.insert(components.inactive[1], comps.file.info)
-table.insert(components.active[3], comps.diagnos.err)
-table.insert(components.active[3], comps.diagnos.warn)
-table.insert(components.active[3], comps.diagnos.hint)
-table.insert(components.active[3], comps.diagnos.info)
-table.insert(components.active[3], comps.git.branch)
-table.insert(components.active[3], comps.git.add)
-table.insert(components.active[3], comps.git.change)
-table.insert(components.active[3], comps.git.remove)
-table.insert(components.active[3], comps.lsp.name)
-table.insert(components.active[3], comps.file.os)
-table.insert(components.active[3], comps.file.position)
-table.insert(components.active[3], comps.line_percentage)
-table.insert(components.active[3], comps.scroll_bar)
+table.insert(components.active[2], comps.diagnos.err)
+table.insert(components.active[2], comps.diagnos.warn)
+table.insert(components.active[2], comps.diagnos.hint)
+table.insert(components.active[2], comps.diagnos.info)
+table.insert(components.active[2], comps.git.branch)
+table.insert(components.active[2], comps.git.add)
+table.insert(components.active[2], comps.git.change)
+table.insert(components.active[2], comps.git.remove)
+table.insert(components.active[2], comps.lsp.name)
+table.insert(components.active[2], comps.file.os)
+table.insert(components.active[2], comps.file.position)
+table.insert(components.active[2], comps.line_percentage)
+table.insert(components.active[2], comps.scroll_bar)
 
 require'feline'.setup {
   colors = { bg = colors.gray, fg = colors.dark_gray },

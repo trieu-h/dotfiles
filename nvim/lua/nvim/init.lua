@@ -1,6 +1,7 @@
 require('nvim.keymappings')
 require('nvim.plugins.colorizer')
 require('nvim.plugins.feline')
+require('nvim.plugins.bufferline')
 require('nvim.plugins.lsp')  -- Remember to install language servers via npm // TODO: Make a script to automate this process
 require('nvim.plugins.treesitter')
 require('nvim.plugins.telescope')

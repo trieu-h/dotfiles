@@ -17,17 +17,15 @@ require("telescope").setup {
     entry_prefix = "  ",
     initial_mode = "insert",
     selection_strategy = "reset",
-    sorting_strategy = "descending",
+    sorting_strategy = "ascending",
     file_sorter = require "telescope.sorters".get_fzy_sorter,
     file_ignore_patterns = {},
     path_display = {'absolute'},
     -- path_display = {'tail'},
+    layout_config = {
+      height = 0.4,
+    },
     color_devicons = true,
-    -- layout_config = {
-    --   vertical = {
-    --     width = 0.5
-    --   }
-    -- },
     set_env = {["COLORTERM"] = "truecolor"}, -- default = nil,
     file_previewer = require "telescope.previewers".vim_buffer_cat.new,
     grep_previewer = require "telescope.previewers".vim_buffer_vimgrep.new,
