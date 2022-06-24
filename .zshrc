@@ -35,7 +35,11 @@ toggle-keyboard() {
   fi
 }
 
+# Swap ctrl and caps lock
 setxkbmap -layout us -option ctrl:swapcaps
+
+# Set repeated key rate
+xset r rate 220 40
 
 alias nv="nvim"
 alias lz="lazygit"
@@ -45,9 +49,8 @@ alias nv="~/Applications/nvim.appimage"
 alias dot="~/.config"
 alias project="~/Project/Personal"
 alias tm="tmux"
-alias idea="~/Downloads/idea-IC-212.5457.46/bin/idea.sh"
-[ -f "/home/haitrieu/.ghcup/env" ] && source "/home/haitrieu/.ghcup/env" # ghcup-env
 
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
-export PATH=$HOME/bin:/usr/local/bin:$PATH:$GOBIN
+export DOOM=$HOME/.emacs.d/bin
+export PATH=$HOME/bin:/usr/local/bin:$PATH:$GOBIN:$DOOM

@@ -17,8 +17,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'trieu-h/fairyfloss.vim'
 
     " Status line
-    Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
+    Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
     Plug 'feline-nvim/feline.nvim'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
 
     " Highlight color
     Plug 'norcalli/nvim-colorizer.lua'
@@ -37,6 +39,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'sbdchd/neoformat'
     Plug 'onsails/lspkind-nvim'
     Plug 'glepnir/lspsaga.nvim'
+    Plug 'RRethy/vim-illuminate'
 
     " Telescope
     Plug 'nvim-lua/popup.nvim'
@@ -108,3 +111,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'akinsho/toggleterm.nvim'
 
 call plug#end()
+
+let g:airline_theme='fairyfloss'
+let g:airline#extensions#nvimlsp#enabled = 1
+let airline#extensions#nvimlsp#error_symbol = 'E:'
+let airline#extensions#nvimlsp#warning_symbol = 'W:'
